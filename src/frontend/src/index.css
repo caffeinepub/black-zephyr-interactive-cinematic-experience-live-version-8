@@ -1,0 +1,236 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.625rem;
+        --background: 0.05 0 0;
+        --foreground: 0.98 0 0;
+        --card: 0.08 0 0;
+        --card-foreground: 0.98 0 0;
+        --popover: 0.08 0 0;
+        --popover-foreground: 0.98 0 0;
+        --primary: 0.75 0.15 240;
+        --primary-foreground: 0.98 0 0;
+        --secondary: 0.15 0.05 240;
+        --secondary-foreground: 0.98 0 0;
+        --muted: 0.15 0 0;
+        --muted-foreground: 0.55 0 0;
+        --accent: 0.65 0.12 240;
+        --accent-foreground: 0.98 0 0;
+        --destructive: 0.55 0.22 25;
+        --destructive-foreground: 0.98 0 0;
+        --border: 0.2 0 0;
+        --input: 0.2 0 0;
+        --ring: 0.65 0.12 240;
+        --chart-1: 0.65 0.22 240;
+        --chart-2: 0.6 0.18 200;
+        --chart-3: 0.7 0.15 280;
+        --chart-4: 0.55 0.2 220;
+        --chart-5: 0.6 0.16 260;
+        --sidebar: 0.08 0 0;
+        --sidebar-foreground: 0.98 0 0;
+        --sidebar-primary: 0.75 0.15 240;
+        --sidebar-primary-foreground: 0.98 0 0;
+        --sidebar-accent: 0.15 0.05 240;
+        --sidebar-accent-foreground: 0.98 0 0;
+        --sidebar-border: 0.2 0 0;
+        --sidebar-ring: 0.65 0.12 240;
+        
+        /* Custom cinematic colors */
+        --dream: 0.85 0.08 240;
+        --ethereal: 0.75 0.12 220;
+        --void: 0.03 0 0;
+    }
+
+    .dark {
+        --background: 0.03 0 0;
+        --foreground: 0.98 0 0;
+        --card: 0.08 0 0;
+        --card-foreground: 0.98 0 0;
+        --popover: 0.08 0 0;
+        --popover-foreground: 0.98 0 0;
+        --primary: 0.75 0.15 240;
+        --primary-foreground: 0.98 0 0;
+        --secondary: 0.15 0.05 240;
+        --secondary-foreground: 0.98 0 0;
+        --muted: 0.15 0 0;
+        --muted-foreground: 0.55 0 0;
+        --accent: 0.65 0.12 240;
+        --accent-foreground: 0.98 0 0;
+        --destructive: 0.55 0.22 25;
+        --destructive-foreground: 0.98 0 0;
+        --border: 0.2 0 0;
+        --input: 0.2 0 0;
+        --ring: 0.65 0.12 240;
+        --chart-1: 0.65 0.22 240;
+        --chart-2: 0.6 0.18 200;
+        --chart-3: 0.7 0.15 280;
+        --chart-4: 0.55 0.2 220;
+        --chart-5: 0.6 0.16 260;
+        --sidebar: 0.08 0 0;
+        --sidebar-foreground: 0.98 0 0;
+        --sidebar-primary: 0.75 0.15 240;
+        --sidebar-primary-foreground: 0.98 0 0;
+        --sidebar-accent: 0.15 0.05 240;
+        --sidebar-accent-foreground: 0.98 0 0;
+        --sidebar-border: 0.2 0 0;
+        --sidebar-ring: 0.65 0.12 240;
+        
+        /* Custom cinematic colors */
+        --dream: 0.85 0.08 240;
+        --ethereal: 0.75 0.12 220;
+        --void: 0.03 0 0;
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    }
+}
+
+@layer utilities {
+    .text-dream {
+        color: oklch(var(--dream));
+    }
+    
+    .text-ethereal {
+        color: oklch(var(--ethereal));
+    }
+    
+    .bg-void {
+        background-color: oklch(var(--void));
+    }
+}
+
+/* Pure CSS animations for Black Zephyr Live Version 8 */
+
+/* Subtle background zoom */
+@keyframes subtle-zoom {
+    0%, 100% {
+        transform: scale(1.1);
+    }
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+/* Gentle floating motion */
+@keyframes gentle-float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Fog rise animation */
+@keyframes fog-rise {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.3;
+    }
+    50% {
+        transform: translateY(-20px) scale(1.05);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(-40px) scale(1.1);
+        opacity: 0.2;
+    }
+}
+
+/* Chest breathing - 6 second cycle with soft rise and fall */
+@keyframes chest-breathing {
+    0%, 100% {
+        transform: scaleY(1) translateY(0);
+    }
+    50% {
+        transform: scaleY(1.008) translateY(-1.5px);
+    }
+}
+
+/* Hair drift - 10 second left-to-right loop */
+@keyframes hair-drift {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(3px, -2px) rotate(1deg);
+    }
+    50% {
+        transform: translate(5px, 0) rotate(1.5deg);
+    }
+    75% {
+        transform: translate(3px, 2px) rotate(1deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+}
+
+/* Eye blink - dynamic intervals between 12-18 seconds for speech pauses */
+@keyframes eye-blink {
+    0%, 95%, 100% {
+        opacity: 0;
+    }
+    96%, 99% {
+        opacity: 1;
+    }
+}
+
+/* Animation classes */
+.animate-subtle-zoom {
+    animation: subtle-zoom 30s ease-in-out infinite;
+}
+
+.animate-gentle-float {
+    animation: gentle-float 6s ease-in-out infinite;
+}
+
+.animate-fog-rise {
+    animation: fog-rise 30s ease-in-out infinite;
+}
+
+.animate-chest-breathing {
+    animation: chest-breathing 6s ease-in-out infinite;
+}
+
+.animate-hair-drift {
+    animation: hair-drift 10s ease-in-out infinite;
+}
+
+/* Custom transition durations */
+.duration-2000 {
+    transition-duration: 2000ms;
+}
+
+.duration-3000 {
+    transition-duration: 3000ms;
+}
+
+.duration-1000 {
+    transition-duration: 1000ms;
+}
+
+.duration-400 {
+    transition-duration: 400ms;
+}
+
+.duration-150 {
+    transition-duration: 150ms;
+}
+
+.duration-500 {
+    transition-duration: 500ms;
+}
+
+.delay-1000 {
+    transition-delay: 1000ms;
+}
